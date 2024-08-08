@@ -1,6 +1,20 @@
 # Prometheus_Exporter_Docker
 
-## Configure Docker Host on Linux
+[cAdvisor](https://github.com/google/cadvisor) is a running daemon that collects, 
+aggregates, processes, and exports information about running containers. 
+Specifically, for each container it keeps resource isolation parameters, 
+historical resource usage, histograms of complete historical resource usage and network statistics. 
+This data is exported by container and machine-wide
+
+## How to run cAdvisor
+
+```SH
+    git clone https://github.com/HornaHomeLab/Prometheus_Exporter_Docker.git \
+    && cd ./Prometheus_Exporter_Docker \
+    && docker compose up -d --force-recreate
+```
+
+## Configure default Docker metrics on Linux Host
 1. Modify `daemon.json` file.
 - file should be located in one of the paths below
 ```
