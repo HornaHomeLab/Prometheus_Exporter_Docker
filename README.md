@@ -9,10 +9,12 @@ This data is exported by container and machine-wide
 ## How to run cAdvisor
 
 ```SH
-    docker compose up -d --force-recreate
+    git clone https://github.com/HornaHomeLab/Prometheus_Exporter_Docker.git \
+    && cd ./Prometheus_Exporter_Docker \
+    && docker compose up -d --force-recreate
 ```
 
-## Configure Default Docker Host on Linux
+## Configure default Docker metrics on Linux Host
 1. Modify `daemon.json` file.
 - file should be located in one of the paths below
 ```
