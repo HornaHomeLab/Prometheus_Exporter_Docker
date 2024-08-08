@@ -1,0 +1,17 @@
+services:
+  cAdvisor:
+    privileged: true
+    image: gcr.io/cadvisor/cadvisor:${C_ADVISOR_VER}
+    container_name: ${C_ADVISOR_CONTAINER_NAME}
+    hostname: ${C_ADVISOR_HOSTNAME}
+    restart: unless-stopped
+    devices:
+      - /dev/kmsg
+    volumes:
+      - /:/rootfs:ro
+      - /var/run:/var/run:ro
+      - /sys:/sys:ro
+      - ${C_ADVISOR_DOCKER_DATA_ROOT}:/var/lib/docker:ro
+      - /dev/disk/:/dev/disk:ro
+    ports:
+      - ${C_ADVISOR_PORT}:8080
